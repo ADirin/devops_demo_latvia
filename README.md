@@ -182,3 +182,4 @@ Metropolia University of Applied Sciences
 Winter 2026 – Latvia
 
 [pods, sq, jemter] https://github.com/ADirin/AverageSpeed_pod_jmeter.git
+[FXML]https://github.com/ADirin/devops_demo_latvia.git
