@@ -1,11 +1,13 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
             steps {
                 git 'https://github.com/ADirin/devops_demo_latvia.git'
             }
         }
+    }
         stage('Build') {
             steps {
                 bat 'mvn clean install' // sh for linux and ios
