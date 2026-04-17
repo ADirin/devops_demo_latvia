@@ -94,6 +94,7 @@ pipeline {
 ````
 ## 🐳 Docker
 The application is packaged as a Docker image.
+
 ### Dockerfile (simplified)
 ````
 FROM eclipse-temurin:21-jre
@@ -154,14 +155,14 @@ This is expected Kubernetes behavior.
 
 ## ✅ Technologies Used
 
-Java 21
-Maven
-JUnit 5
-JaCoCo
-Jenkins
-Docker
-Docker Hub
-Kubernetes (Minikube)
+- Java 21
+- Maven
+- JUnit 5
+- JaCoCo
+- Jenkins
+- Docker
+- Docker Hub
+- Kubernetes (Minikube)
 
 
 ## 🎓 Educational Purpose
@@ -175,5 +176,9 @@ It shows how even a simple function can be integrated into a full DevOps pipelin
 
 ## 👤 Author
 ####Amir Dirin
+
 Metropolia University of Applied Sciences
+
 Winter 2026 – Latvia
+
+[pods, sq, jemter] https://github.com/ADirin/AverageSpeed_pod_jmeter.git
