@@ -21,31 +21,28 @@
             <scope>test</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>5.14.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.13</version>
+            <version>0.8.14</version>
         </dependency>
 
     </dependencies>
     <build>
         <finalName>avgspd1_latvia</finalName>
         <plugins>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -54,7 +51,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.example.AvgSpd1_POD</mainClass>
+                            <mainClass>org.example.AveragSpeed</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -65,14 +62,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-
-                <configuration>
-                    <argLine>@{argLine}</argLine>
-                    <excludes>
-                        <exclude>**/AvgSpd1_POD.class</exclude>
-                    </excludes>
-                </configuration>
+                <version>3.5.2</version>
             </plugin>
 
             <plugin>

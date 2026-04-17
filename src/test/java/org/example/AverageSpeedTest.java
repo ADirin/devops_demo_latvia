@@ -1,34 +1,26 @@
 package org.example;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-    public class AverageSpeedTest {
+public class AverageSpeedTest {
 
-        @Test
-        public void testCalAverageSpeed_NormalCase() {
-            double distance = 100.0;
-            double time = 20.0;
+    @Test
+    void testCalAverageSpeed_NormalCase() {
+        double result = AveragSpeed.calAverageSpeed(100.0, 20.0);
+        assertEquals(5.0, result, 0.0001);
+    }
 
-            double result = AveragSpeed.calAverageSpeed(distance, time);
+    @Test
+    void testCalAverageSpeed_TimeIsZero_ThrowsException() {
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> AveragSpeed.calAverageSpeed(100.0, 0.0)
+        );
 
-            assertEquals(5.0, result, 0.0001);
-        }
-
-        @Test
-        public void testCalAverageSpeed_TimeIsZero_ThrowsException() {
-            double distance = 100.0;
-            double time = 0.0;
-
-            IllegalArgumentException exception = assertThrows(
-                    IllegalArgumentException.class,
-                    () -> AveragSpeed.calAverageSpeed(distance, time)
-            );
-
-            assertEquals("zero is not acceptable", exception.getMessage());
-        }
+        assertEquals("zero is not acceptable", exception.getMessage());
+    }
 }
