@@ -2,17 +2,25 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 git 'https://github.com/ADirin/devops_demo_latvia.git'
             }
         }
-    }
+
         stage('Build') {
             steps {
-                bat 'mvn clean install' // sh for linux and ios
+                bat 'mvn clean install'
             }
         }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
         stage('Generate Report') {
             steps {
                 bat 'mvn jacoco:report'
@@ -30,5 +38,5 @@ pipeline {
                 jacoco()
             }
         }
-
     }
+}
